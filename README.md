@@ -1,73 +1,156 @@
-# Welcome to your Lovable project
+# 💰 Split and Share Wise - Expense Management App
 
-## Project info
+A full-stack web application similar to Splitwise, where users can track and split their day-to-day expenses. Built with React, TypeScript, Tailwind CSS, and Supabase.
 
-**URL**: https://lovable.dev/projects/683bc27b-db23-4a89-a37c-91b64ade0e67
+![Split and Share Wise](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-blue?style=for-the-badge&logo=tailwind-css)
+![Supabase](https://img.shields.io/badge/Supabase-2.39.0-green?style=for-the-badge&logo=supabase)
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+### ✅ Core Features
+- **User Authentication & Profiles** - Email/password login & signup with profile management
+- **Groups & Friends** - Create groups and add friends by email
+- **Expense Management** - Add expenses with equal splitting among participants
+- **Dashboard & Balances** - Track total owed, total owed to you, and net balance
+- **Settle Up Functionality** - Record payments and clear debts
+- **Activity Feed** - View expense history and recent activities
 
-**Use Lovable**
+### 🎯 Key Capabilities
+- Create and manage expense groups (e.g., "Roommates", "Trip to Goa")
+- Add friends and send friend requests
+- Split expenses equally among group members
+- Track who owes whom with real-time balance updates
+- Record settlements and payment history
+- Search and filter friends and groups
+- Responsive design for mobile and desktop
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/683bc27b-db23-4a89-a37c-91b64ade0e67) and start prompting.
+## 🚀 Live Demo
 
-Changes made via Lovable will be committed automatically to this repo.
+**🌐 Application**: [https://split-and-share-wise.vercel.app](https://split-and-share-wise.vercel.app)
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Backend**: Supabase (PostgreSQL + Auth + Real-time)
+- **State Management**: React Hooks + Context API
+- **Deployment**: GitHub Pages + GitHub Actions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📱 Screenshots
 
-Follow these steps:
+### Dashboard
+![Dashboard](https://via.placeholder.com/800x400/3B82F6/FFFFFF?text=Dashboard+View)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Add Expense
+![Add Expense](https://via.placeholder.com/800x400/10B981/FFFFFF?text=Add+Expense+Form)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Groups Management
+![Groups](https://via.placeholder.com/800x400/F59E0B/FFFFFF?text=Groups+Management)
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🚀 Quick Start
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Supabase account
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/chandrakantverma/split-and-share-wise.git
+   cd split-and-share-wise
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:8080`
+
+## 🗄️ Database Setup
+
+### Supabase Configuration
+1. Create a new Supabase project
+2. Run the SQL migrations in `supabase/migrations/`
+3. Update your environment variables with Supabase credentials
+
+### Database Schema
+- **profiles** - User profile information
+- **groups** - Expense groups
+- **group_members** - Group membership
+- **expenses** - Expense records
+- **expense_participants** - Who owes what for each expense
+- **settlements** - Payment records
+- **friendships** - Friend relationships
+
+## 📁 Project Structure
+
+```
+split-and-share-wise/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── hooks/         # Custom React hooks
+│   ├── integrations/  # External service integrations
+│   └── lib/           # Utility functions
+├── supabase/          # Database migrations and config
+├── public/            # Static assets
+└── .github/           # GitHub Actions workflows
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### GitHub Pages (Automatic)
+- Push to `main` branch triggers automatic deployment
+- Deployed to: `https://chandrakantverma.github.io/split-and-share-wise/`
 
-**Use GitHub Codespaces**
+### Manual Deployment
+```bash
+npm run build
+# Deploy the `dist` folder to your hosting service
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🤝 Contributing
 
-## What technologies are used for this project?
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This project is built with:
+## 📝 License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## How can I deploy this project?
+## 🙏 Acknowledgments
 
-Simply open [Lovable](https://lovable.dev/projects/683bc27b-db23-4a89-a37c-91b64ade0e67) and click on Share -> Publish.
+- Built with [shadcn/ui](https://ui.shadcn.com/) components
+- Powered by [Supabase](https://supabase.com/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
 
-## Can I connect a custom domain to my Lovable project?
+## 📞 Support
 
-Yes, you can!
+If you have any questions or need help:
+- Create an [issue](https://github.com/chandrakantverma/split-and-share-wise/issues)
+- Contact: [chandrakantverma@example.com](mailto:chandrakantverma@example.com)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+⭐ **Star this repository if you find it helpful!**
