@@ -10,6 +10,10 @@ import { AppSidebar } from "./components/AppSidebar";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Groups from "./pages/Groups";
+import AddExpense from "./pages/AddExpense";
+import Activity from "./pages/Activity";
+import Friends from "./pages/Friends";
+import SettleUp from "./pages/SettleUp";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +41,10 @@ const App = () => (
                         <Routes>
                           <Route path="/" element={<Dashboard />} />
                           <Route path="/groups" element={<Groups />} />
+                          <Route path="/expenses/new" element={<AddExpense />} />
+                          <Route path="/activity" element={<Activity />} />
+                          <Route path="/friends" element={<Friends />} />
+                          <Route path="/settle-up" element={<SettleUp />} />
                           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                           <Route path="*" element={<NotFound />} />
                         </Routes>

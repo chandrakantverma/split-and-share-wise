@@ -12,7 +12,8 @@ import {
   TrendingDown, 
   Users, 
   Receipt,
-  ArrowRight
+  ArrowRight,
+  DollarSign
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -70,6 +71,9 @@ export default function Dashboard() {
         net_balance: totalOwed - totalOwing,
       });
 
+      // Get user's group IDs first
+      const userGroupIds = await getUserGroupIds();
+      
       // Fetch recent expenses
       const { data: expenses } = await supabase
         .from('expenses')
@@ -81,7 +85,7 @@ export default function Dashboard() {
           groups(name),
           profiles!expenses_paid_by_fkey(full_name)
         `)
-        .or(`paid_by.eq.${user?.id},group_id.in.(${await getUserGroupIds()})`)
+        .or(`paid_by.eq.${user?.id},group_id.in.(${userGroupIds})`)
         .order('created_at', { ascending: false })
         .limit(5);
 
@@ -155,12 +159,20 @@ export default function Dashboard() {
             Welcome back! Here's your expense summary.
           </p>
         </div>
-        <Button asChild>
-          <Link to="/expenses/new">
-            <Plus className="h-4 w-4 mr-2" />
-            Add Expense
-          </Link>
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" asChild>
+            <Link to="/settle-up">
+              <DollarSign className="h-4 w-4 mr-2" />
+              Settle Up
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link to="/expenses/new">
+              <Plus className="h-4 w-4 mr-2" />
+              Add Expense
+            </Link>
+          </Button>
+        </div>
       </div>
 
       {/* Balance Cards */}
